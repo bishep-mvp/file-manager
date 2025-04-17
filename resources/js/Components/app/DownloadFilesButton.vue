@@ -15,7 +15,7 @@
             />
         </svg>
 
-        Download
+        Скачать
     </PrimaryButton>
 </template>
 

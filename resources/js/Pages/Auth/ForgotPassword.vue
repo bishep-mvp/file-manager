@@ -26,9 +26,9 @@ const submit = () => {
         <Head title="Forgot Password" />
 
         <div class="mb-4 text-sm text-gray-600">
-            Forgot your password? No problem. Just let us know your email
-            address and we will email you a password reset link that will allow
-            you to choose a new one.
+            Забыли свой пароль? Без проблем. Просто сообщите нам свой адрес электронной
+            почты, и мы вышлем вам по электронной почте ссылку для сброса пароля, которая позволит
+            вам выбрать новый.
         </div>
 
         <div

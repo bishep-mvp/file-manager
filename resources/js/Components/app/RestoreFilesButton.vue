@@ -18,12 +18,12 @@
             />
         </svg>
 
-        Restore
+        Восстановить
     </button>
 
     <ConfirmationDialog
         :show="showConfirmationDialog"
-        message="Are you sure you want to restore selected files?"
+        message="Вы уверены, что хотите восстановить выбранные файлы?"
         @cancel="onCancel"
         @confirm="onConfirm"
     >
@@ -61,7 +61,7 @@ const emit = defineEmits(["restore"]);
 
 function onClick() {
     if (!props.allSelected && !props.selectedIds.length) {
-        showErrorDialog("Please select at least one file to restore");
+        showErrorDialog("Пожалуйста, выберите хотя бы один файл для восстановления");
         return;
     }
     showConfirmationDialog.value = true;
@@ -82,7 +82,7 @@ function onConfirm() {
         onSuccess: () => {
             showConfirmationDialog.value = false;
             emit("restore");
-            showSuccessNotification("Selected file have been restored");
+            showSuccessNotification("Выбранный файл был восстановлен");
         },
     });
 }

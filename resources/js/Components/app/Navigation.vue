@@ -16,10 +16,10 @@
                 <NavLink
                     :href="route('myFiles')"
                     :active="$page.url === '/my-files'"
-                    >My Files</NavLink
+                    >Мои файлы</NavLink
                 >
                 <NavLink :href="route('trash')" :active="$page.url === '/trash'"
-                    >Trash</NavLink
+                    >Корзина</NavLink
                 >
             </div>
         </div>
@@ -32,5 +32,3 @@ import ApplicationLogo from "@/Components/ApplicationLogo.vue";
 import CreateNewDropdown from "@/Components/app/CreateNewDropdown.vue";
 import NavLink from "@/Components/NavLink.vue";
 </script>
-
-<style scoped></style>

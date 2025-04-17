@@ -31,12 +31,12 @@
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Name
+                            Имя
                         </th>
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Path
+                            Путь
                         </th>
                     </tr>
                 </thead>
@@ -82,7 +82,7 @@
                 v-if="!allFiles.data.length"
                 class="py-8 text-center text-md text-gray-400"
             >
-                There is no data in this folder
+                В этой папке нет данных
             </div>
             <div ref="loadMoreIntersect"></div>
         </div>

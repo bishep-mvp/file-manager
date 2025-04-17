@@ -1,10 +1,10 @@
 <template>
     <Modal :show="show" max-width="md">
         <div class="p-6">
-            <h2 class="text-2xl mb-2 text-red-600 font-semibold">Error</h2>
+            <h2 class="text-2xl mb-2 text-red-600 font-semibold">Ошибка</h2>
             <p>{{ message }}</p>
             <div class="mt-6 flex justify-end">
-                <PrimaryButton @click="close">Ok</PrimaryButton>
+                <PrimaryButton @click="close">ОК</PrimaryButton>
             </div>
         </div>
     </Modal>

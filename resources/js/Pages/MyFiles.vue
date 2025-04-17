@@ -1,5 +1,5 @@
 <template>
-    <Head title="Files" />
+    <Head title="Файлы" />
 
     <AuthenticatedLayout>
         <nav class="flex items-center justify-between p-1 mb-3">
@@ -27,7 +27,7 @@
                             />
                         </svg>
 
-                        My Files
+                        Мои файлы
                     </Link>
                     <div v-else class="flex items-center">
                         <svg
@@ -55,7 +55,7 @@
 
             <div class="flex items-center gap-x-3">
                 <label class="flex items-center gap-x-2 mr-6">
-                    <span class="cursor-pointer">Only Favourites</span>
+                    <span class="cursor-pointer">Только избранное</span>
                     <Checkbox
                         @change="showOnlyFavourites"
                         v-model:checked="onlyFavourites"
@@ -84,27 +84,27 @@
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Tag as favourite
+                            Пометить как избранное
                         </th>
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Name
+                            Имя
                         </th>
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Owner
+                            Владелец
                         </th>
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Last Modified
+                            Последнее изменение
                         </th>
                         <th
                             class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
-                            Size
+                            Размер
                         </th>
                     </tr>
                 </thead>
@@ -195,7 +195,7 @@
                 v-if="!allFiles.data.length"
                 class="py-8 text-center text-md text-gray-400"
             >
-                There is no data in this folder
+                 В этой папке нет данных
             </div>
             <div ref="loadMoreIntersect"></div>
         </div>
@@ -299,7 +299,7 @@ function addRemoveFavourite(file) {
         .then(() => {
             file.is_favourite = !file.is_favourite;
             showSuccessNotification(
-                "Selected files have been added to favourites"
+                "Выбранные файлы были добавлены в избранное"
             );
         })
         .catch(async (er) => {

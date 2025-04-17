@@ -1,11 +1,11 @@
 <template>
     <modal :show="modelValue" @show="onShow" max-width="sm">
         <div class="p-6">
-            <h2 class="text-lg font-medium text-gray-900">Create New Folder</h2>
+            <h2 class="text-lg font-medium text-gray-900">Создать новую папку</h2>
             <div class="mt-6">
                 <InputLabel
                     for="folderName"
-                    value="Folder Name"
+                    value="Название папки"
                     class="sr-only"
                 />
                 <TextInput
@@ -25,13 +25,13 @@
                 <InputError :message="form.errors.name" class="mt-2" />
             </div>
             <div class="mt-6 flex justify-end">
-                <SecondaryButton @click="closeModal">Cancel</SecondaryButton>
+                <SecondaryButton @click="closeModal">Отмена</SecondaryButton>
                 <PrimaryButton
                     class="ml-3"
                     :class="{ 'opacity-25': form.processing }"
                     @click="createFolder"
                     :disabled="form.processing"
-                    >Submit</PrimaryButton
+                    >Подтвердить</PrimaryButton
                 >
             </div>
         </div>
@@ -74,7 +74,7 @@ function createFolder() {
         preserveScroll: true,
         onSuccess: () => {
             closeModal();
-            showSuccessNotification(`The folder "${name}" was created`);
+            showSuccessNotification(`Папка "${name}" создана`);
             form.reset();
         },
         onError: () => folderNameInput.value.focus(),
