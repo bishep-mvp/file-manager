@@ -71,7 +71,7 @@ const closeModal = () => {
                 <div class="mt-6">
                     <InputLabel
                         for="password"
-                        value="Password"
+                        value="Пароль"
                         class="sr-only"
                     />
 
@@ -81,7 +81,7 @@ const closeModal = () => {
                         v-model="form.password"
                         type="password"
                         class="mt-1 block w-3/4"
-                        placeholder="Password"
+                        placeholder="Пароль"
                         @keyup.enter="deleteUser"
                     />
 
@@ -99,7 +99,7 @@ const closeModal = () => {
                         :disabled="form.processing"
                         @click="deleteUser"
                     >
-                        Delete Account
+                        Удалить аккаунт
                     </DangerButton>
                 </div>
             </div>

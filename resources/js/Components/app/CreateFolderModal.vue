@@ -19,7 +19,7 @@
                             ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
                             : ''
                     "
-                    placeholder="Folder Name"
+                    placeholder="Название"
                     @keyup.enter="createFolder"
                 />
                 <InputError :message="form.errors.name" class="mt-2" />

@@ -67,7 +67,7 @@ function uploadFiles(files) {
 
     fileUploadForm.post(route("file.store"), {
         onSuccess: () => {
-            showSuccessNotification(`${files.length} files have been uploaded`);
+            showSuccessNotification(`${files.length} файлов было обновлено`);
         },
         onError: (errors) => {
             let message = "";
@@ -75,7 +75,7 @@ function uploadFiles(files) {
             if (Object.keys(errors).length > 0) {
                 message = errors[Object.keys(errors)[0]];
             } else {
-                message = "Error during file upload. Please try again later.";
+                message = "Ошибка при обновлении. Пожалуйста, попробуйте позже.";
             }
 
             showErrorDialog(message);
