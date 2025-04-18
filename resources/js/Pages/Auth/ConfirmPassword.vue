@@ -19,7 +19,7 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Confirm Password" />
+        <Head title="Подтверждение пароля" />
 
         <div class="mb-4 text-sm text-gray-600">
                 Это защищенная область приложения. Пожалуйста, подтвердите свой
@@ -28,7 +28,7 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="Пароль" />
                 <TextInput
                     id="password"
                     type="password"
@@ -47,7 +47,7 @@ const submit = () => {
                     :class="{ 'opacity-25': form.processing }"
                     :disabled="form.processing"
                 >
-                    Confirm
+                    Подтвердить
                 </PrimaryButton>
             </div>
         </form>

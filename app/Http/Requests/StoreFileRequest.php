@@ -46,7 +46,7 @@ class StoreFileRequest extends ParentIdBaseRequest
                             ->exists();
 
                         if ($file) {
-                            $fail('File "' . $value->getClientOriginalName() . '" already exists.');
+                            $fail('Файл "' . $value->getClientOriginalName() . '" уде существует.');
                         }
                     }
                 }
@@ -63,7 +63,7 @@ class StoreFileRequest extends ParentIdBaseRequest
                             ->exists();
 
                         if ($file) {
-                            $fail('Folder "' . $value . '" already exists.');
+                            $fail('Папка "' . $value . '" уже существует.');
                         }
                     }
                 }

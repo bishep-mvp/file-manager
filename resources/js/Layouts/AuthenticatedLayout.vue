@@ -6,7 +6,7 @@
             @drop.prevent="handleDrop"
             @dragover.prevent="onDragOver"
             @dragleave.prevent="onDragLeave"
-            class="flex flex-col flex-1 px-4"
+            class="min-h-screen flex flex-col flex-1 px-4"
             :class="dragOver ? 'dropzone' : ''"
         >
             <template

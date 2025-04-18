@@ -1,7 +1,7 @@
 <template>
     <MenuItem v-slot="{ active }">
         <a href="#" class="text-gray-700 block px-4 py-2 text-sm relative">
-            Папка для загрузки
+            Загрузить папку
             <input
                 @change="onChange"
                 type="file"

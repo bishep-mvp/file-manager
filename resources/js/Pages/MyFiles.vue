@@ -2,12 +2,8 @@
     <Head title="Файлы" />
 
     <AuthenticatedLayout>
-        <nav
-            class="flex flex-col md:flex-row items-center justify-between p-1 mb-3"
-        >
-            <ol
-                class="inline-flex items-center space-x-1 md:space-x-3 mb-2 md:mb-0"
-            >
+        <nav class="flex items-center justify-between p-1 mb-3">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
                 <li
                     v-for="ans of ancestors.data"
                     :key="ans.id"
@@ -57,8 +53,8 @@
                 </li>
             </ol>
 
-            <div class="flex flex-wrap items-center gap-x-3 mt-2 md:mt-0">
-                <label class="flex items-center gap-x-2">
+            <div class="flex items-center gap-x-3">
+                <label class="flex items-center gap-x-2 mr-6">
                     <span class="cursor-pointer">Только избранное</span>
                     <Checkbox
                         @change="showOnlyFavourites"
@@ -74,11 +70,11 @@
             </div>
         </nav>
         <div class="flex-1 overflow-auto">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-100">
+            <table class="min-w-full">
+                <thead class="bg-gray-100 border-b">
                     <tr>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left w-[30px] max-w-[30px]"
                         >
                             <Checkbox
                                 @change="onSelectAllChange"
@@ -86,27 +82,27 @@
                             />
                         </th>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                             Пометить как избранное
                         </th>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                             Имя
                         </th>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                             Владелец
                         </th>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                             Последнее изменение
                         </th>
                         <th
-                            class="text-sm font-medium text-gray-900 px-4 py-2 text-left"
+                            class="text-sm font-medium text-gray-900 px-6 py-4 text-left"
                         >
                             Размер
                         </th>
@@ -126,7 +122,7 @@
                         "
                     >
                         <td
-                            class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900"
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-[30px] max-w-[30px] pr-0"
                         >
                             <Checkbox
                                 @change="
@@ -137,7 +133,7 @@
                             />
                         </td>
                         <td
-                            class="px-4 py-2 text-sm font-medium text-yellow-500"
+                            class="px-6 py-4 maw-w-[40px] text-sm font-medium text-yellow-500"
                         >
                             <div @click.stop.prevent="addRemoveFavourite(file)">
                                 <svg
@@ -147,7 +143,7 @@
                                     viewBox="0 0 24 24"
                                     stroke-width="1.5"
                                     stroke="currentColor"
-                                    class="size-6 inline"
+                                    class="size-6"
                                 >
                                     <path
                                         stroke-linecap="round"
@@ -160,7 +156,7 @@
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
-                                    class="size-6 inline"
+                                    class="size-6"
                                 >
                                     <path
                                         fill-rule="evenodd"
@@ -171,23 +167,23 @@
                             </div>
                         </td>
                         <td
-                            class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900 flex items-center"
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 flex items-center"
                         >
                             <FileIcon :file="file" />
                             {{ file.name }}
                         </td>
                         <td
-                            class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900"
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                         >
                             {{ file.owner }}
                         </td>
                         <td
-                            class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900"
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                         >
                             {{ file.updated_at }}
                         </td>
                         <td
-                            class="px-4 py-2 whitespace-nowrap text-sm font-medium text-gray-900"
+                            class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
                         >
                             {{ file.size }}
                         </td>
