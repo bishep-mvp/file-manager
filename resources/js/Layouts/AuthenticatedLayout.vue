@@ -1,26 +1,28 @@
 <template>
-    <div class="h-screen bg-gray-100 flex w-full gap-4">
+    <div class="min-h-screen bg-gray-100 flex w-full gap-4">
         <Navigation />
 
         <main
             @drop.prevent="handleDrop"
             @dragover.prevent="onDragOver"
             @dragleave.prevent="onDragLeave"
-            class="flex flex-col flex-1 px-4 overflow-hidden"
+            class="flex flex-col flex-1 px-4"
             :class="dragOver ? 'dropzone' : ''"
         >
             <template
                 v-if="dragOver"
                 class="text-gray-500 text-center py-8 text-sm"
             >
-                 Сбрасывайте файлы сюда для загрузки
+                Сбрасывайте файлы сюда для загрузки
             </template>
             <template v-else>
-                <div class="flex items-center justify-between w-full">
+                <div
+                    class="flex items-center justify-center md:justify-between w-full"
+                >
                     <SearchForm />
                     <UserSettingsDropdown />
                 </div>
-                <div class="flex-1 flex flex-col overflow-hidden">
+                <div class="flex-1 flex flex-col">
                     <slot />
                 </div>
             </template>
@@ -40,7 +42,12 @@ import FormProgress from "@/Components/app/FormProgress.vue";
 import ErrorDialog from "@/Components/ErrorDialog.vue";
 import Notification from "@/Components/Notification.vue";
 import { ref, onMounted } from "vue";
-import { emitter, FILE_UPLOAD_STARTED, showErrorDialog, showSuccessNotification } from "@/event-bus";
+import {
+    emitter,
+    FILE_UPLOAD_STARTED,
+    showErrorDialog,
+    showSuccessNotification,
+} from "@/event-bus";
 import { useForm, usePage } from "@inertiajs/vue3";
 
 const page = usePage();
@@ -75,7 +82,8 @@ function uploadFiles(files) {
             if (Object.keys(errors).length > 0) {
                 message = errors[Object.keys(errors)[0]];
             } else {
-                message = "Ошибка при обновлении. Пожалуйста, попробуйте позже.";
+                message =
+                    "Ошибка при обновлении. Пожалуйста, попробуйте позже.";
             }
 
             showErrorDialog(message);

@@ -1,5 +1,5 @@
 <template>
-    <Head title="Trash" />
+    <Head title="Корзина" />
 
     <AuthenticatedLayout>
         <nav class="flex items-center justify-end p-1 mb-3">

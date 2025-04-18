@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent class="w-[600px] h-[80px] flex items-center">
+    <form @submit.prevent class="w-[300px] h-[80px] flex items-center">
         <TextInput
             type="text"
             class="block w-full mr-2"
