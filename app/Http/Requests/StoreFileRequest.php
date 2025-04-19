@@ -46,7 +46,7 @@ class StoreFileRequest extends ParentIdBaseRequest
                             ->exists();
 
                         if ($file) {
-                            $fail('Файл "' . $value->getClientOriginalName() . '" уде существует.');
+                            $fail('Файл "' . $value->getClientOriginalName() . '" уже существует.');
                         }
                     }
                 }
