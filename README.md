@@ -12,8 +12,6 @@ This project is built using Vue.js for the frontend, Laravel for the backend, an
 - [Technologies Used](#technologies-used)
 - [Installation and Setup](#installation-and-setup)
 - [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
 
 ## Features
 
@@ -29,6 +27,7 @@ This project is built using Vue.js for the frontend, Laravel for the backend, an
 - **Containerization**: Docker Compose  
 - **Cloud Services**: Yandex Cloud (for storage and hosting)  
 - **Database**: MySQL
+- **Other Tools**: Mailpit (for testing emails)
 
 ## Installation and Setup
 
