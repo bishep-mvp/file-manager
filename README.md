@@ -1,8 +1,8 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-# License
+# Description
 
-Cloud Storage Application is a web-based file storage and management system inspired by Google Drive. It allows users to create folders, upload files, manage their data, and perform various operations such as searching, downloading, and deleting files.
+BDrive is a web-based file storage and management system inspired by Google Drive. It allows users to create folders, upload files, manage their data, and perform various operations such as searching, downloading, and deleting files.
 
 This project is built using Vue.js for the frontend, Laravel for the backend, and Docker Compose for containerization. The application is hosted on Yandex Cloud, which provides cloud storage and hosting services.
 
@@ -14,7 +14,6 @@ This project is built using Vue.js for the frontend, Laravel for the backend, an
 - [Environment Variables](#environment-variables)
 - [Deployment](#deployment)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 
@@ -29,8 +28,7 @@ This project is built using Vue.js for the frontend, Laravel for the backend, an
 - **Backend**: Laravel (PHP Framework)  
 - **Containerization**: Docker Compose  
 - **Cloud Services**: Yandex Cloud (for storage and hosting)  
-- **Database**: MySQL (or any database supported by Laravel)  
-- **Other Tools**: Axios (for API communication), Vuex (for state management)
+- **Database**: MySQL
 
 ## Installation and Setup
 
