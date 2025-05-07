@@ -1,66 +1,116 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Description
 
-## About Laravel
+BDrive is a web-based file storage and management system inspired by Google Drive. It allows users to create folders, upload files, manage their data, and perform various operations such as searching, downloading, and deleting files.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project is built using Vue.js for the frontend, Laravel for the backend, and Docker Compose for containerization. The application is hosted on Yandex Cloud, which provides cloud storage and hosting services.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation and Setup](#installation-and-setup)
+- [Environment Variables](#environment-variables)
 
-## Learning Laravel
+## Features
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **Creating Folders at Unlimited Depth**: Organize your files in a hierarchical structure with nested folders.
+- **Uploading Files and Folders**: Upload individual files or entire folders with ease.
+- **Deleting and Downloading Files**: Manage your files by deleting or downloading them as needed.
+- **Searching for Files**: Quickly locate files using the search functionality.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Technologies Used
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- **Frontend**: Vue.js  
+- **Backend**: Laravel (PHP Framework)  
+- **Containerization**: Docker Compose  
+- **Cloud Services**: Yandex Cloud (for storage and hosting)  
+- **Database**: MySQL
+- **Other Tools**: Mailpit (for testing emails)
 
-## Laravel Sponsors
+## Installation and Setup
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Prerequisites
 
-### Premium Partners
+Before you begin, ensure you have the following installed on your machine:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+- Docker  
+- Docker Compose  
+- Node.js (for frontend development)  
+- Composer (for Laravel dependencies)  
 
-## Contributing
+### Steps to Run Locally
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Clone the Repository
 
-## Code of Conduct
+```bash
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Set Up Environment Variables
 
-## Security Vulnerabilities
+Copy the `.env.example` file to `.env` and configure it with your credentials:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+cp .env.example .env
+```
 
-## License
+Update the following variables in the `.env` file:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Database credentials  
+- Yandex Cloud storage credentials  
+- Application URL  
+
+#### Build and Run Containers
+
+Use Docker Compose to build and run the application:
+
+```bash
+docker-compose up --build
+```
+
+#### Install Dependencies
+
+Inside the running containers, install frontend and backend dependencies:
+
+**For the frontend (Vue.js):**
+
+```bash
+docker exec -it <frontend-container-name> npm install
+```
+
+**For the backend (Laravel):**
+
+```bash
+docker exec -it <backend-container-name> composer install
+```
+
+#### Generate Application Key
+
+Generate the Laravel application key:
+
+```bash
+docker exec -it <backend-container-name> php artisan key:generate
+```
+
+#### Run Migrations
+
+Apply database migrations:
+
+```bash
+docker exec -it <backend-container-name> php artisan migrate
+```
+
+#### Access the Application
+
+Open your browser and navigate to `http://localhost`.
+
+## Environment Variables
+
+The `.env` file contains the following critical variables:
+
+- `APP_URL`: Base URL of the application  
+- `DB_CONNECTION`, `DB_HOST`, `DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`: Database configuration  
+- `YANDEX_CLOUD_BUCKET`, `YANDEX_CLOUD_ACCESS_KEY`, `YANDEX_CLOUD_SECRET_KEY`: Yandex Cloud storage credentials
